@@ -1,0 +1,17 @@
+﻿<h1>Template driven Form: </h1>
+<form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+    <label>Username: </label>
+    <input type="text" name="username" ngModel required>
+    <label>Password: </label>
+    <input type="password" name="password" ngModel required>
+    <button type="submit">Submit</button>
+</form>
+<br /><br />
+<h1>Model driven or Reactive Form: </h1>
+<form [formGroup]="reactiveForm" (ngSubmit)="onSubmit(reactiveForm.value)">
+    <label>Username: </label>
+    <input type="text" [formControl]="reactiveForm.controls['username']">
+    <label>Password: </label>
+    <input type="password" [formControl]="reactiveForm.controls['password']">
+    <button type="submit">Submit</button>
+</form>
